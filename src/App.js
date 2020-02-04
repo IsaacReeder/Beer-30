@@ -5,17 +5,18 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
-import MainNavigation from "./shared/components/MainNavigation";
 import LandingPage from "./landing/LandingPage";
 import Login from "./login/Login";
 import SignUp from "./signup/SignUp";
 import ListView from "./search/listView/ListView";
-import MapView from "./search/mapView/MapView";
+import MainHeader from "./shared/components/MainHeader";
+import SearchBar from "./search/components/SearchBar";
 
 const App = () => {
   return (
     <Router>
-      <MainNavigation />
+      <MainHeader />
+      <SearchBar />
       <main>
         <Switch>
           <Route path="/" exact>
@@ -27,11 +28,8 @@ const App = () => {
           <Route path="/sign-up" exact>
             <SignUp />
           </Route>
-          <Route path="/search/list-view" exact>
+          <Route path="/search" exact>
             <ListView />
-          </Route>
-          <Route path="/search/map-view" exact>
-            <MapView />
           </Route>
           <Redirect to="/" />
         </Switch>
