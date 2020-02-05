@@ -6,27 +6,22 @@ import {
   Redirect
 } from "react-router-dom";
 import LandingPage from "./landing/LandingPage";
-import Login from "./login/Login";
-import SignUp from "./signup/SignUp";
-import ListView from "./search/listView/ListView";
+import ListView from "./shared/components/ListView";
 import MainHeader from "./shared/components/MainHeader";
 import SearchBar from "./search/components/SearchBar";
+import Footer from "./shared/components/Footer";
 
 const App = () => {
   return (
     <Router>
       <MainHeader />
       <SearchBar />
+      <ListView />
+      <Footer />
       <main>
         <Switch>
           <Route path="/" exact>
             <LandingPage />
-          </Route>
-          <Route path="/login" exact>
-            <Login />
-          </Route>
-          <Route path="/sign-up" exact>
-            <SignUp />
           </Route>
           <Route path="/search" exact>
             <ListView />
