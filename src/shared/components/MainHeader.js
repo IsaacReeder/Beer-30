@@ -3,6 +3,7 @@ import "./MainHeader.css";
 import { Box, Heading, Text, Icon, Sticky } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import WeatherInfo from "./WeatherInfo";
+import DateInfo from "./Date";
 
 const Section = ({ children, title }) => (
   <Box padding={2}>
@@ -37,7 +38,8 @@ const MainHeader = () => {
             />
           </Box>
           <Box paddingX={1} flex="grow">
-            <Text align="center">Tuesday, Feb 4, 200020</Text>
+            {/* <Text align="center">Tuesday, Feb 4, 200020</Text> */}
+            <DateInfo />
             <Text weight="bold" align="center">
               BEER-30
             </Text>
@@ -51,6 +53,7 @@ const MainHeader = () => {
               size="50"
             /> */}
             {/* <Text align="center">Current weather</Text> */}
+
             <WeatherInfo />
           </Box>
         </Box>
