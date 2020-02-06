@@ -27,7 +27,7 @@ const DateInfo = () => {
   ];
 
   return (
-    <p className="header__date heading-secondary">
+    <p className="header__date heading-secondary" align="center">
       {dayNames[new Date().getDay()]}, {monthNames[new Date().getMonth()]}{" "}
       {new Date().getDate()}, {new Date().getFullYear()}
     </p>

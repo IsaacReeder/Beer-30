@@ -1,9 +1,11 @@
 import React from "react";
 import "./MainHeader.css";
-import { Box, Heading, Text, Icon, Sticky } from "gestalt";
+import { Box, Heading, Sticky } from "gestalt";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "gestalt/dist/gestalt.css";
 import WeatherInfo from "./WeatherInfo";
 import DateInfo from "./Date";
+import { faBeer } from "@fortawesome/free-solid-svg-icons";
 
 const Section = ({ children, title }) => (
   <Box padding={2}>
@@ -14,7 +16,7 @@ const Section = ({ children, title }) => (
   </Box>
 );
 
-const MainHeader = () => {
+const MainHeader = props => {
   return (
     <Sticky top={1}>
       <Section>
@@ -29,31 +31,19 @@ const MainHeader = () => {
           justifyContent="around"
           height={150}
         >
-          <Box paddingX={1}>
-            <Icon
-              icon="flash"
-              accessibilityLabel="Flash"
-              color="blue"
-              size="100"
-            />
+          <Box padding={1}>
+            <FontAwesomeIcon icon={faBeer} size="6x" pull="right" />
           </Box>
-          <Box paddingX={1} flex="grow">
-            {/* <Text align="center">Tuesday, Feb 4, 200020</Text> */}
+          <Box paddingX={1} flex="grow" alignContent="center">
             <DateInfo />
-            <Text weight="bold" align="center">
-              BEER-30
-            </Text>
-            <Text align="center">Lets grab a drink</Text>
+            <h1 className="header-title " align="center">
+              {props.title}
+            </h1>
+            <h3 className="header-tagline " align="center">
+              {props.tagline}
+            </h3>
           </Box>
-          <Box paddingX={1}>
-            {/* <Icon
-              icon="alert"
-              accessibilityLabel="Alert"
-              color="blue"
-              size="50"
-            /> */}
-            {/* <Text align="center">Current weather</Text> */}
-
+          <Box paddingY={1}>
             <WeatherInfo />
           </Box>
         </Box>
