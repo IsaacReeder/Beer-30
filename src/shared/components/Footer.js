@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Box, Text, Heading } from "gestalt";
+import DateInfo from "./Date";
 
 const Section = ({ children, title }) => (
   <Box padding={2}>
@@ -32,6 +33,7 @@ const Footer = () => {
             </Text>
             <Text align="center">Software Developer</Text>
             <Text align="center">2020</Text>
+            <DateInfo />
           </Box>
         </Box>
       </Section>

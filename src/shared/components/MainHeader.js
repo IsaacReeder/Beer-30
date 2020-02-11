@@ -4,7 +4,6 @@ import { Box, Heading, Sticky } from "gestalt";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "gestalt/dist/gestalt.css";
 import WeatherInfo from "./WeatherInfo";
-import DateInfo from "./Date";
 import { faBeer } from "@fortawesome/free-solid-svg-icons";
 
 const Section = ({ children, title }) => (
@@ -35,7 +34,6 @@ const MainHeader = props => {
             <FontAwesomeIcon icon={faBeer} size="6x" pull="right" />
           </Box>
           <Box paddingX={1} flex="grow" alignContent="center">
-            <DateInfo />
             <h1 className="header-title " align="center">
               {props.title}
             </h1>
