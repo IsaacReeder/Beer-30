@@ -22,6 +22,7 @@ import MainHeader from "./shared/components/MainHeader";
 import SearchBar from "./search/components/SearchBar";
 import Footer from "./shared/components/Footer";
 import BarList from "./shared/components/BarList";
+import "../src/shared/components/BarList.scss";
 
 library.add(fab, faCheckSquare, faCoffee, faBeer, faMapMarkerAlt, faPhone);
 

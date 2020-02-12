@@ -114,7 +114,7 @@ class RestaurantList extends Component {
           </p>
 
           <a href={result.url} className="RestaurantInfo__website">
-            More infomration on Yelp
+            More information on Yelp
           </a>
 
           <img
