@@ -18,11 +18,12 @@ import {
 
 import LandingPage from "./landing/LandingPage";
 // import ListView from "./shared/components/ListView";
-import MainHeader from "./shared/components/MainHeader";
-import SearchBar from "./search/components/SearchBar";
-import Footer from "./shared/components/Footer";
-import BarList from "./shared/components/BarList";
+// import MainHeader from "./shared/components/MainHeader";
+// import SearchBar from "./search/components/SearchBar";
+// import Footer from "./shared/components/Footer";
+// import BarList from "./shared/components/BarList";
 import "../src/shared/components/BarList.scss";
+import MainPage from "./shared/components/MainPage";
 
 library.add(fab, faCheckSquare, faCoffee, faBeer, faMapMarkerAlt, faPhone);
 
@@ -43,18 +44,14 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <MainHeader title="Beer-30" />
-        <SearchBar onFormSubmit={this.onFormSubmit} />
-        <BarList searchLocationQuery={this.state.searchLocationQuery} />
-        <Footer />
         <main>
           <Switch>
             <Route path="/" exact>
               <LandingPage />
             </Route>
-            {/* <Route path="/search" exact>
-              <ListView /> */}
-            {/* </Route> */}
+            <Route path="/WheresMyBrew" exact>
+              <MainPage />
+            </Route>
             <Redirect to="/" />
           </Switch>
         </main>

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-import { Box, Text, IconButton } from "gestalt";
+import { Box, Text, IconButton, Icon } from "gestalt";
+
+import "./SearchBar.scss";
 
 class SearchBar extends Component {
   constructor() {
@@ -32,26 +34,29 @@ class SearchBar extends Component {
         alignItems="center"
       >
         <Box padding={3}>
-          <Text align="center">I am looking for a brewery near</Text>
-          {/* <Icon
-          icon="flashlight"
-          color="red"
-          size={20}
-          accessibilityLabel="Flashlight"
-        /> */}
+          <Text align="center" weight="bold">
+            I am looking for a brewery near
+          </Text>
+          <Icon
+            icon="flashlight"
+            color="red"
+            size={20}
+            accessibilityLabel="Flashlight"
+          />
         </Box>
         {/* <Box flex="grow" paddingX={2}>
           <SearchField
             onSubmit={e => this.handleFormSubmit(e)}
             accessibilityLabel="Search Field"
+            type="text"
             id="searchField"
+            placeholder="address, neighbourhood, city, province or postal code"
             value={this.state.searchLocationQuery}
-            onChange={({ searchLocationQuery }) =>
-              this.setState({ searchLocationQuery })
-            }
-            placeholder="Address, neighborhood, city, province, or postal code"
+            onChange={this.handleSearchChange}
+            className="searchForm__input"
           />
         </Box> */}
+        {/* /////////////////////////// */}
         <div className="searchForm">
           {/*add an event listener of form submit so the state only get set when the form is submitted*/}
           <form onSubmit={e => this.handleFormSubmit(e)}>
@@ -63,20 +68,21 @@ class SearchBar extends Component {
             <input
               type="text"
               id="location"
-              placeholder="address, neighbourhood, city, province or postal code"
+              placeholder="address, city, or postal code"
               value={this.state.searchLocationQuery}
               onChange={this.handleSearchChange}
               className="searchForm__input"
             />
-            <button type="submit" className="searchForm__button">
-              Search
-              {/* <FontAwesomeIcon
+          </form>
+          <button type="submit" className="searchForm__button">
+            Search
+            {/* <FontAwesomeIcon
                 icon="search-location"
                 className="searchForm__icon"
               /> */}
-            </button>
-          </form>
+          </button>
         </div>
+        {/* ///////////////////////////// */}
         <Box paddingX={2}>
           <IconButton
             accessibilityLabel="Notifications"
