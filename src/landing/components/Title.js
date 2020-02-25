@@ -1,9 +1,12 @@
 import React from "react";
+import { Heading } from "gestalt";
+import "./Title.css";
 
-const Title = () => {
+const Title = props => {
   return (
-    <div>
-      <h1>Title</h1>
+    <div className="header-title">
+      <h1>{props.title}</h1>
+      <h5>" {props.Tagline} "</h5>
     </div>
   );
 };

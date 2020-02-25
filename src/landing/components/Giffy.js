@@ -4,7 +4,7 @@ import Logo from "../../assets/fd.gif";
 const Giffy = () => {
   return (
     <div>
-      <img
+      {/* <img
         alt="alt"
         src={Logo}
         width="50%"
@@ -12,7 +12,7 @@ const Giffy = () => {
         frameBorder="0"
         className="giphy-embed"
         allowFullScreen
-      ></img>
+      ></img> */}
     </div>
   );
 };
