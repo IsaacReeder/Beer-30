@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Button from "./FormElements/Button";
 import Modal from "./UIElements/Modal";
+import RegForm from "./RegForm";
 import "./Register.css";
 
 const Register = props => {
@@ -16,21 +17,15 @@ const Register = props => {
       <Modal
         show={showRegForm}
         onCancel={closeFormHandler}
-        header={props.address}
-        contentClass="place-item__modal-content"
-        footerClass="place-item__modal-actions"
-        footer={<Button onClick={closeFormHandler}>CLOSE</Button>}
+        onSubmit={closeFormHandler}
       >
         <div className="form-container">
-          {/* <Map center={props.coordinates} zoom={16} /> */}
-          <h2>Reg Form</h2>
+          <RegForm />
         </div>
       </Modal>
-      <li className="place-item">
-        <Button inverse onClick={openFormHandler}>
-          Sign Up
-        </Button>
-      </li>
+      <Button inverse onClick={openFormHandler}>
+        Sign Up
+      </Button>
     </React.Fragment>
   );
 };

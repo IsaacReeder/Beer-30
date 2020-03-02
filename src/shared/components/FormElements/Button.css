@@ -15,21 +15,19 @@
   outline: none;
 }
 
-.button:hover,
-.button:active {
-  background: #ff4382;
-  border-color: #ff4382;
+.button:hover, .button:active {
+  background: #667061;
+  border-color: #667061;
 }
 
 .button--inverse {
   background: transparent;
-  color: #ff0055;
+  color: #1e0bca;
 }
 
-.button--inverse:hover,
-.button--inverse:active {
+.button--inverse:hover, .button--inverse:active {
   color: white;
-  background: #ff0055;
+  background: #667061;
 }
 
 .button--danger {
@@ -37,15 +35,12 @@
   border-color: #830000;
 }
 
-.button--danger:hover,
-.button--danger:active {
-  background: #f34343;
-  border-color: #f34343;
+.button--danger:hover, .button--danger:active {
+  background: #667061;
+  border-color: #667061;
 }
 
-.button:disabled,
-.button:hover:disabled,
-.button:active:disabled {
+.button:disabled, .button:hover:disabled, .button:active:disabled {
   background: #ccc;
   color: #979797;
   border-color: #ccc;
