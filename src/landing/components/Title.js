@@ -1,5 +1,4 @@
 import React from "react";
-import { Heading } from "gestalt";
 import "./Title.css";
 
 const Title = props => {

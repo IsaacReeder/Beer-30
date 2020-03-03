@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
-import Register from "../Register";
+// import Register from "../Register";
 
 import Backdrop from "./Backdrop";
 import "./Modal.css";

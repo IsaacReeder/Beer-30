@@ -1,98 +1,93 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
-// import { Redirect } from "react-router-dom";
-import "./RegForm.css";
 
-export default class Register extends Component {
+import "./LogIn.css";
+
+export default class LogIn extends Component {
   state = {
-    name: "",
     email: "",
     password: "",
     redirect: false,
-    authError: false,
-    isLoading: false
+    isLoading: false,
+    toast: false,
+    toastMessage: "",
+    loading: false
   };
 
-  handleEmailChange = event => {
+  handleEmailChange = async event => {
     this.setState({ email: event.target.value });
   };
+
   handlePwdChange = event => {
     this.setState({ password: event.target.value });
   };
-  handleNameChange = event => {
-    this.setState({ name: event.target.value });
-  };
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
     this.setState({ isLoading: true });
-    const url = "https://gowtham-rest-api-crud.herokuapp.com/register";
+
+    console.log("submitted");
+
+    const url = "https://gowtham-rest-api-crud.herokuapp.com/login";
     const email = this.state.email;
     const password = this.state.password;
-    const name = this.state.name;
     let bodyFormData = new FormData();
     bodyFormData.set("email", email);
-    bodyFormData.set("name", name);
     bodyFormData.set("password", password);
     axios
       .post(url, bodyFormData)
       .then(result => {
-        this.setState({ isLoading: false });
-        if (result.data.status !== "fail") {
-          this.setState({ redirect: true, authError: true });
-        } else {
-          this.setState({ redirect: false, authError: true });
+        if (result.data.status) {
+          localStorage.setItem("token", result.data.token);
+          this.setState({ redirect: true, isLoading: false });
+          localStorage.setItem("isLoggedIn", true);
         }
       })
       .catch(error => {
         console.log(error);
         this.setState({ authError: true, isLoading: false });
       });
+    // {
+    //   this.renderRedirect();
+    // }
+  };
+
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to="/WheresMyBrew" />;
+    }
   };
 
   render() {
-    // const isLoading = this.state.isLoading;
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="container">
-          <label htmlFor="inputName">Name</label>
-          <input
-            type="text"
-            id="inputName"
-            placeholder="name"
-            name="name"
-            onChange={this.handleNameChange}
-            autoFocus
-            required
-          />
-
-          <label htmlFor="inputEmail">Email address</label>
           <input
             id="inputEmail"
             placeholder="Email address"
-            type="text"
+            type="email"
             name="email"
             onChange={this.handleEmailChange}
+            autoFocus
             required
           />
-
-          <label htmlFor="inputPassword">Password</label>
           <input
             type="password"
             id="inputPassword"
-            placeholder="******"
+            placeholder="**************"
             name="password"
             onChange={this.handlePwdChange}
             required
           />
-
           <button
             className="registerbtn"
             type="submit"
             disabled={this.state.isLoading ? true : false}
           >
-            Register
+            Login
           </button>
+          {this.renderRedirect()}
         </div>
       </form>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../assets/fd.gif";
+// import Logo from "../../assets/fd.gif";
 
 const Giffy = () => {
   return (
