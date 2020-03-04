@@ -8,16 +8,18 @@ import Register from "../shared/components/Register";
 
 const LandingPage = () => {
   return (
-    // <div className="background">
-    <Fragment>
-      <center>
-        <Title title="Beer-30" Tagline="Let's grab a drink" />
-        <Giffy />
-        <LogIn />
-        <Register header="Register" />
-      </center>
-    </Fragment>
-    // </div>
+    <div id="app">
+      <div className="background">
+        <Fragment>
+          <center>
+            <Title title="Beer-30" Tagline="Let's grab a drink" />
+            <Giffy />
+            <LogIn />
+            <Register header="Register" />
+          </center>
+        </Fragment>
+      </div>
+    </div>
   );
 };
 

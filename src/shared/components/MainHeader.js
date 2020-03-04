@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
 import "./MainHeader.css";
 import { Box, Heading, Sticky } from "gestalt";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,39 +16,67 @@ const Section = ({ children, title }) => (
   </Box>
 );
 
-const MainHeader = props => {
-  return (
-    <Sticky top={1}>
-      <Section>
-        <Box
-          alignItems="center"
-          direction="row"
-          display="flex"
-          marginStart={-1}
-          marginEnd={-1}
-          shape="rounded"
-          color="gray"
-          justifyContent="around"
-          height={150}
-        >
-          <Box padding={1}>
-            <FontAwesomeIcon icon={faBeer} size="6x" pull="right" />
-          </Box>
-          <Box paddingX={1} flex="grow" alignContent="center">
-            <h1 className="header-title " align="center">
-              {props.title}
-            </h1>
-            <h3 className="header-tagline " align="center">
-              {props.tagline}
-            </h3>
-          </Box>
-          <Box paddingY={1}>
-            <WeatherInfo />
-          </Box>
-        </Box>
-      </Section>
-    </Sticky>
-  );
-};
+export default class MainHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClickLogout = this.handleClickLogout.bind(this);
+  }
 
-export default MainHeader;
+  state = {
+    toMainPage: false
+  };
+
+  handleClickLogout() {
+    localStorage.removeItem("token");
+    localStorage.setItem("isLoggedIn", false);
+    this.setState({ toMainPage: true });
+  }
+
+  render() {
+    if (this.state.toMainPage === true) {
+      return <Redirect to="/" />;
+    }
+    return (
+      <Sticky top={1}>
+        <Section>
+          <Box
+            alignItems="center"
+            direction="row"
+            display="flex"
+            marginStart={-1}
+            marginEnd={-1}
+            shape="rounded"
+            color="gray"
+            justifyContent="around"
+            height={150}
+          >
+            <Box padding={1}>
+              <FontAwesomeIcon icon={faBeer} size="6x" pull="right" />
+            </Box>
+            <Box paddingX={1} flex="grow" alignContent="center">
+              <h1 className="header-title " align="center">
+                {this.props.title}
+              </h1>
+              <h3 className="header-tagline " align="center">
+                {this.props.tagline}
+              </h3>
+            </Box>
+            <Box paddingY={1}>
+              <WeatherInfo />
+              {/* logoutbutton */}
+              <Link
+                to={"#"}
+                onClick={this.handleClickLogout}
+                className="dropdown-item"
+                data-toggle="modal"
+                data-target="#logoutModal"
+              >
+                Logout
+              </Link>
+            </Box>
+          </Box>
+        </Section>
+      </Sticky>
+    );
+  }
+}
