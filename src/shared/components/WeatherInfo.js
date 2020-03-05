@@ -52,6 +52,7 @@ class WeatherInfo extends Component {
 
         {!!this.state.results && (
           <div className="weatherData">
+            <br></br>
             <i
               className={`owf owf-${this.state.results.weather[0].id} owf-5x owf-fw`}
             ></i>
@@ -61,6 +62,7 @@ class WeatherInfo extends Component {
             <p className="weatherData__description">
               {this.state.results.weather[0].description}
             </p>
+            <br></br>
           </div>
         )}
       </div>

@@ -17,11 +17,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import LandingPage from "./landing/LandingPage";
-// import ListView from "./shared/components/ListView";
-// import MainHeader from "./shared/components/MainHeader";
-// import SearchBar from "./search/components/SearchBar";
-// import Footer from "./shared/components/Footer";
-// import BarList from "./shared/components/BarList";
 import "../src/shared/components/BarList.scss";
 import MainPage from "./shared/components/MainPage";
 

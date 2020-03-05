@@ -54,7 +54,7 @@ export default class Register extends Component {
     // const isLoading = this.state.isLoading;
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className="container">
+        <div className="container3">
           <label htmlFor="inputName">Name</label>
           <input
             type="text"

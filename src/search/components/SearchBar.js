@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Box, Text, IconButton, Icon } from "gestalt";
+import { Box } from "gestalt";
 
 import "./SearchBar.scss";
 
@@ -26,23 +26,25 @@ class SearchBar extends Component {
   render() {
     return (
       <Box
-        color="white"
+        // color="white"
         shape="rounded"
         padding={3}
         display="flex"
         direction="row"
         alignItems="center"
       >
-        <Box padding={3}>
-          <Text align="center" weight="bold">
+        <Box>
+          <h1>Whats nearby? </h1>
+
+          {/* <Text align="center" weight="bold" inline size="lg" color="white">
             I am looking for a brewery near
-          </Text>
-          <Icon
+          </Text> */}
+          {/* <Icon
             icon="flashlight"
             color="red"
             size={20}
             accessibilityLabel="Flashlight"
-          />
+          /> */}
         </Box>
         {/* <Box flex="grow" paddingX={2}>
           <SearchField
@@ -83,13 +85,13 @@ class SearchBar extends Component {
           </button>
         </div>
         {/* ///////////////////////////// */}
-        <Box paddingX={2}>
+        {/* <Box paddingX={2}>
           <IconButton
             accessibilityLabel="Notifications"
             icon="speech-ellipsis"
             size="md"
           />
-        </Box>
+        </Box> */}
         {/* <Box paddingX={2}>
         <IconButton accessibilityLabel="Profile" icon="person" size="md" />
       </Box> */}
