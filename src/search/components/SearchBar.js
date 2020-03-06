@@ -33,19 +33,19 @@ class SearchBar extends Component {
         direction="row"
         alignItems="center"
       >
-        <Box>
-          <h1>Whats nearby? </h1>
+        {/* <Box> */}
+        {/* <h1>Whats nearby? </h1> */}
 
-          {/* <Text align="center" weight="bold" inline size="lg" color="white">
+        {/* <Text align="center" weight="bold" inline size="lg" color="white">
             I am looking for a brewery near
           </Text> */}
-          {/* <Icon
+        {/* <Icon
             icon="flashlight"
             color="red"
             size={20}
             accessibilityLabel="Flashlight"
           /> */}
-        </Box>
+        {/* </Box> */}
         {/* <Box flex="grow" paddingX={2}>
           <SearchField
             onSubmit={e => this.handleFormSubmit(e)}
@@ -75,14 +75,16 @@ class SearchBar extends Component {
               onChange={this.handleSearchChange}
               className="searchForm__input"
             />
+            <button type="submit" className="searchForm__button">
+              Search
+            </button>
           </form>
-          <button type="submit" className="searchForm__button">
-            Search
-            {/* <FontAwesomeIcon
+          {/* Search */}
+          {/* <FontAwesomeIcon
                 icon="search-location"
                 className="searchForm__icon"
               /> */}
-          </button>
+          {/* </button> */}
         </div>
         {/* ///////////////////////////// */}
         {/* <Box paddingX={2}>

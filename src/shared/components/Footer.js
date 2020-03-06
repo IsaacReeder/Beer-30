@@ -1,17 +1,10 @@
 import React, { Fragment, Component } from "react";
-import { Box, Text, Heading } from "gestalt";
+// import { Box, Text, Heading } from "gestalt";
 import { Link, Redirect } from "react-router-dom";
 import DateInfo from "./Date";
 import "./Footer.scss";
-
-const Section = ({ children, title }) => (
-  <Box padding={2}>
-    <Box marginBottom={1}>
-      <Heading size="xs">{title}</Heading>
-    </Box>
-    {children}
-  </Box>
-);
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default class Footer extends Component {
   constructor(props) {
@@ -33,10 +26,41 @@ export default class Footer extends Component {
     if (this.state.toMainPage === true) {
       return <Redirect to="/" />;
     }
+
+    const dateStyle = {
+      color: "white",
+      fontFamily: "lobster"
+    };
+    const nameStyle = {
+      color: "white",
+      textAlign: "center",
+      fontFamily: "lobster"
+    };
     return (
       <Fragment>
-        <div className="footer"></div>
-        <Section>
+        <div className="footer">
+          <h2 style={nameStyle}>Isaac Reeder</h2>
+          <h1 style={dateStyle}>
+            <DateInfo />
+          </h1>
+          <FontAwesomeIcon
+            icon={faSignOutAlt}
+            size="3x"
+            pull="right"
+            to={"/"}
+            onClick={this.handleClickLogout}
+          />
+          {/* <Link
+            to={"/"}
+            onClick={this.handleClickLogout}
+            // className="dropdown-item"
+            // data-toggle="modal"
+            // data-target="#logoutModal"
+          >
+            Logout
+          </Link> */}
+        </div>
+        {/* <Section>
           <Box />
           <Box
             paddingX={1}
@@ -58,7 +82,7 @@ export default class Footer extends Component {
               <DateInfo />
             </Box>
             {/* logoutbutton */}
-            <Link
+        {/* <Link
               to={"#"}
               onClick={this.handleClickLogout}
               className="dropdown-item"
@@ -67,8 +91,8 @@ export default class Footer extends Component {
             >
               Logout
             </Link>
-          </Box>
-        </Section>
+          </Box> */}
+        {/* </Section>  */}
       </Fragment>
     );
   }

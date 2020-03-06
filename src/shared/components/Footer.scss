@@ -1,11 +1,13 @@
 .footer {
-  grid-area: searchForm;
-  padding: 2rem 0;
-  width: 90%;
+  // padding-bottom: 10rem;
+  width: 98%;
   background-color: grey;
   box-shadow: 0 40px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 15px;
-  padding: 2%;
-  margin-left: 1rem;
-  margin-right: 2rem;
+  padding-bottom: 2%;
+  left: 1rem;
+  right: 1rem;
+  position: fixed;
+  bottom: 1rem;
+  height: 12rem;
 }

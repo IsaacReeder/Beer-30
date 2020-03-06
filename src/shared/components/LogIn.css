@@ -7,7 +7,9 @@
 .container {
     padding: 16px;
     background-color: white;
-    width: 52%;
+    width: 42%;
+    box-shadow: 0 30px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5%;
 }
 
 /* Full-width input fields */
@@ -46,18 +48,18 @@ hr {
 
 /* Set a style for the submit button */
 
-.registerbtn {
+.loginbtn {
     background-color: rgb(156, 180, 157);
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 50%;
+    width: 100%;
     opacity: 0.9;
 }
 
-.registerbtn:hover {
+.loginbtn:hover {
     opacity: 1;
 }
 

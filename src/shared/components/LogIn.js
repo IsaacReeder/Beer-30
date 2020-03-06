@@ -81,7 +81,7 @@ export default class LogIn extends Component {
             required
           />
           <button
-            className="registerbtn"
+            className="loginbtn"
             type="submit"
             disabled={this.state.isLoading ? true : false}
           >
