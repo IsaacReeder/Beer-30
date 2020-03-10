@@ -33,7 +33,7 @@ class RestaurantList extends Component {
     //UI feedback to tell the user when we are retrieving infromation from the API
     this.setState({ loading: true });
 
-    //using a proxy server cors-anywhere to get rid of the CROS probblem
+    //using a proxy server cors-anywhere to get rid of the CORS problem
     //SUPER HOT TIP: passing the location variable, which equals to the user's input (see below). Instead of grabbbing the entire API, it will only retrieve the restaurants that are closed to the lcoation information we entered. This makes the lodading wayyyyyyy faster.
     axios
       .get(
@@ -101,7 +101,7 @@ class RestaurantList extends Component {
           </p>
 
           <img
-            // src={require(`../../assets/yelp_stars/regular/${result.rating}`)}
+            src={`../../assets/yelp_stars/regular/${result.rating}`}
             alt={`yelp ratings: ${result.rating}/5`}
             className="RestaurantInfo__rating"
           />

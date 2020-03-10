@@ -24,7 +24,7 @@ export default class MainHeader extends Component {
           {this.props.title}
         </h1>
 
-        <WeatherInfo pull="right" pull="right" />
+        <WeatherInfo pull="right" />
       </div>
     );
   }
