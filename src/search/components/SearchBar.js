@@ -25,28 +25,32 @@ class SearchBar extends Component {
   };
   render() {
     return (
-      <Box
-        // color="white"
-        shape="rounded"
-        padding={3}
-        display="flex"
-        direction="row"
-        alignItems="center"
-      >
-        {/* <Box> */}
-        {/* <h1>Whats nearby? </h1> */}
+      <React.Fragment>
+        <br />
+        <br />
+        <br />
+        <Box
+          // color="white"
+          shape="rounded"
+          padding={3}
+          display="flex"
+          direction="row"
+          alignItems="center"
+        >
+          {/* <Box> */}
+          {/* <h1>Whats nearby? </h1> */}
 
-        {/* <Text align="center" weight="bold" inline size="lg" color="white">
+          {/* <Text align="center" weight="bold" inline size="lg" color="white">
             I am looking for a brewery near
           </Text> */}
-        {/* <Icon
+          {/* <Icon
             icon="flashlight"
             color="red"
             size={20}
             accessibilityLabel="Flashlight"
           /> */}
-        {/* </Box> */}
-        {/* <Box flex="grow" paddingX={2}>
+          {/* </Box> */}
+          {/* <Box flex="grow" paddingX={2}>
           <SearchField
             onSubmit={e => this.handleFormSubmit(e)}
             accessibilityLabel="Search Field"
@@ -58,46 +62,47 @@ class SearchBar extends Component {
             className="searchForm__input"
           />
         </Box> */}
-        {/* /////////////////////////// */}
-        <div className="searchForm">
-          {/*add an event listener of form submit so the state only get set when the form is submitted*/}
-          <form onSubmit={e => this.handleFormSubmit(e)}>
-            <label
-              htmlFor="location"
-              arialabel="enter address, neighbourhood, city, province or postal code"
-              className="searchForm__label"
-            ></label>
-            <input
-              type="text"
-              id="location"
-              placeholder="address, city, or postal code"
-              value={this.state.searchLocationQuery}
-              onChange={this.handleSearchChange}
-              className="searchForm__input"
-            />
-            <button type="submit" className="searchForm__button">
-              Search
-            </button>
-          </form>
-          {/* Search */}
-          {/* <FontAwesomeIcon
+          {/* /////////////////////////// */}
+          <div className="searchForm">
+            {/*add an event listener of form submit so the state only get set when the form is submitted*/}
+            <form onSubmit={e => this.handleFormSubmit(e)}>
+              <label
+                htmlFor="location"
+                arialabel="enter address, neighbourhood, city, province or postal code"
+                className="searchForm__label"
+              ></label>
+              <input
+                type="text"
+                id="location"
+                placeholder="address, city, or postal code"
+                value={this.state.searchLocationQuery}
+                onChange={this.handleSearchChange}
+                className="searchForm__input"
+              />
+              <button type="submit" className="searchForm__button">
+                Search
+              </button>
+            </form>
+            {/* Search */}
+            {/* <FontAwesomeIcon
                 icon="search-location"
                 className="searchForm__icon"
               /> */}
-          {/* </button> */}
-        </div>
-        {/* ///////////////////////////// */}
-        {/* <Box paddingX={2}>
+            {/* </button> */}
+          </div>
+          {/* ///////////////////////////// */}
+          {/* <Box paddingX={2}>
           <IconButton
             accessibilityLabel="Notifications"
             icon="speech-ellipsis"
             size="md"
           />
         </Box> */}
-        {/* <Box paddingX={2}>
+          {/* <Box paddingX={2}>
         <IconButton accessibilityLabel="Profile" icon="person" size="md" />
       </Box> */}
-      </Box>
+        </Box>
+      </React.Fragment>
     );
   }
 }

@@ -1,19 +1,20 @@
 .searchForm {
   // grid-area: searchForm;
   padding: 2rem 0;
-  width: 61%;
+  width: 66%;
   background-color: grey;
   box-shadow: 0 40px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 25px;
   padding: 2%;
   margin: 0 auto;
+  top: 0.5rem;
 
   form {
     // padding-right: 30%;
     border-radius: 15px;
     display: flex;
     align-items: center;
-    background-color: aliceblue;
+    background-color: white;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 1rem;

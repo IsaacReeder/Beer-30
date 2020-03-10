@@ -37,7 +37,7 @@ class RestaurantList extends Component {
     //SUPER HOT TIP: passing the location variable, which equals to the user's input (see below). Instead of grabbbing the entire API, it will only retrieve the restaurants that are closed to the lcoation information we entered. This makes the lodading wayyyyyyy faster.
     axios
       .get(
-        // `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3/businesses/search?location=${locationSearched}`,
+        `${"https://cors-anywhere.herokuapp.com/"}https://api.yelp.com/v3/businesses/search?location=${locationSearched}`,
         {
           //required authorization format from API
           headers: {
@@ -67,9 +67,9 @@ class RestaurantList extends Component {
 
   renderEmptyState() {
     return (
-      <h2 className="heading-tertiary">
+      <h2 className="alert">
         Hang tight! We are working on getting you the list of best breweries in
-        your neighbourhood!
+        your neighborhood!
       </h2>
     );
   }
@@ -79,9 +79,7 @@ class RestaurantList extends Component {
       return (
         <div className="RestaurantInfo" key={result.id}>
           <img src={result.image_url} alt="" className="RestaurantInfo__img" />
-          <h2 className="heading-tertiary RestaurantInfo__name">
-            {result.name}
-          </h2>
+          <h2 className=" RestaurantInfo__name">{result.name}</h2>
 
           <p className="RestaurantInfo__para">
             <FontAwesomeIcon

@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import MainHeader from "./MainHeader";
 import SearchBar from "../../search/components/SearchBar";
 import BarList from "./BarList";
-import Footer from "./Footer";
+import Footer from "./FooterMain";
 
 import axios from "axios";
 

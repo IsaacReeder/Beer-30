@@ -46,6 +46,9 @@ class WeatherInfo extends Component {
   };
 
   render() {
+    const pStyle = {
+      fontSize: "1rem"
+    };
     return (
       <div className="weatherData">
         {this.state.loading && <p>loading weather information...</p>}
@@ -56,12 +59,12 @@ class WeatherInfo extends Component {
             <i
               className={`owf owf-${this.state.results.weather[0].id} owf-5x owf-fw`}
             ></i>
-            <p className="weatherData__currentTemp">
+            <p style={pStyle} className="weatherData__currentTemp">
               {Math.floor(this.state.results.main.temp)}&#8451;
             </p>
-            <p className="weatherData__description">
+            {/* <p style={pStyle} className="weatherData__description">
               {this.state.results.weather[0].description}
-            </p>
+            </p> */}
             <br></br>
           </div>
         )}
