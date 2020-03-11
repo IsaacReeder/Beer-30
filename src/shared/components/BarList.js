@@ -100,11 +100,7 @@ class RestaurantList extends Component {
             {result.phone}
           </p>
 
-          <img
-            src={`../../assets/yelp_stars/regular/${result.rating}`}
-            alt={`yelp ratings: ${result.rating}/5`}
-            className="RestaurantInfo__rating"
-          />
+          <h3>{`yelp ratings: ${result.rating}/5`}</h3>
 
           <p className="RestaurantInfo__reviewCount">
             {" "}

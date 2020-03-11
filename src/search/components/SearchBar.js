@@ -30,38 +30,12 @@ class SearchBar extends Component {
         <br />
         <br />
         <Box
-          // color="white"
           shape="rounded"
           padding={3}
           display="flex"
           direction="row"
           alignItems="center"
         >
-          {/* <Box> */}
-          {/* <h1>Whats nearby? </h1> */}
-
-          {/* <Text align="center" weight="bold" inline size="lg" color="white">
-            I am looking for a brewery near
-          </Text> */}
-          {/* <Icon
-            icon="flashlight"
-            color="red"
-            size={20}
-            accessibilityLabel="Flashlight"
-          /> */}
-          {/* </Box> */}
-          {/* <Box flex="grow" paddingX={2}>
-          <SearchField
-            onSubmit={e => this.handleFormSubmit(e)}
-            accessibilityLabel="Search Field"
-            type="text"
-            id="searchField"
-            placeholder="address, neighbourhood, city, province or postal code"
-            value={this.state.searchLocationQuery}
-            onChange={this.handleSearchChange}
-            className="searchForm__input"
-          />
-        </Box> */}
           {/* /////////////////////////// */}
           <div className="searchForm">
             {/*add an event listener of form submit so the state only get set when the form is submitted*/}
@@ -83,24 +57,7 @@ class SearchBar extends Component {
                 Search
               </button>
             </form>
-            {/* Search */}
-            {/* <FontAwesomeIcon
-                icon="search-location"
-                className="searchForm__icon"
-              /> */}
-            {/* </button> */}
           </div>
-          {/* ///////////////////////////// */}
-          {/* <Box paddingX={2}>
-          <IconButton
-            accessibilityLabel="Notifications"
-            icon="speech-ellipsis"
-            size="md"
-          />
-        </Box> */}
-          {/* <Box paddingX={2}>
-        <IconButton accessibilityLabel="Profile" icon="person" size="md" />
-      </Box> */}
         </Box>
       </React.Fragment>
     );

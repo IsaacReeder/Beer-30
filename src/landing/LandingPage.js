@@ -12,7 +12,8 @@ const LandingPage = () => {
       <div className="background">
         <Fragment>
           <center>
-            <Title title="Beer-30" Tagline="Let's grab a drink" />
+            <img src={require("../assets/BeerGlasses.png")} alt="BEER-30"></img>
+            <Title />
             <Giffy />
             <LogIn />
             <Register header="Register" />

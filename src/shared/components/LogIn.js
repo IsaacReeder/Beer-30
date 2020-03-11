@@ -62,7 +62,7 @@ export default class LogIn extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className="container">
+        <div className="container1">
           <input
             id="inputEmail"
             placeholder="Email address"
