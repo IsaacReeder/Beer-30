@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Loader from "./UIElements/Loader";
+import { CSSTransition } from "react-transition-group";
 
 class RestaurantList extends Component {
   constructor(props) {
@@ -68,8 +70,7 @@ class RestaurantList extends Component {
   renderEmptyState() {
     return (
       <h2 className="alert">
-        Hang tight! We are working on getting you the list of best breweries in
-        your neighborhood!
+        <Loader />
       </h2>
     );
   }
@@ -77,46 +78,52 @@ class RestaurantList extends Component {
   renderRestaurantInfo() {
     const RestaruantList = this.state.results.map(result => {
       return (
-        <div className="RestaurantInfo" key={result.id}>
-          <img src={result.image_url} alt="" className="RestaurantInfo__img" />
-          <h2 className=" RestaurantInfo__name">{result.name}</h2>
-
-          <p className="RestaurantInfo__para">
-            <FontAwesomeIcon
-              icon="map-marker-alt"
-              className="RestaurantInfo__icon"
-              aria-label="address:"
+        <CSSTransition in={true} appear={true} timeout={1000} classNames="fade">
+          <div className="RestaurantInfo" key={result.id}>
+            <img
+              src={result.image_url}
+              alt=""
+              className="RestaurantInfo__img"
             />
-            {result.location.display_address[0]},{" "}
-            {result.location.display_address[1]}
-          </p>
+            <h2 className=" RestaurantInfo__name">{result.name}</h2>
 
-          <p className="RestaurantInfo__para">
-            <FontAwesomeIcon
-              icon="phone"
-              className="RestaurantInfo__icon"
-              aria-label="phone number:"
+            <p className="RestaurantInfo__para">
+              <FontAwesomeIcon
+                icon="map-marker-alt"
+                className="RestaurantInfo__icon"
+                aria-label="address:"
+              />
+              {result.location.display_address[0]},{" "}
+              {result.location.display_address[1]}
+            </p>
+
+            <p className="RestaurantInfo__para">
+              <FontAwesomeIcon
+                icon="phone"
+                className="RestaurantInfo__icon"
+                aria-label="phone number:"
+              />
+              {result.phone}
+            </p>
+
+            <h3>{`yelp ratings: ${result.rating}/5`}</h3>
+
+            <p className="RestaurantInfo__reviewCount">
+              {" "}
+              Based on {result.review_count} Reviews
+            </p>
+
+            <a href={result.url} className="RestaurantInfo__website">
+              More information on Yelp
+            </a>
+
+            <img
+              src={require("../../assets/Yelp.png")}
+              alt="yelp"
+              className="RestaurantInfo__yelp"
             />
-            {result.phone}
-          </p>
-
-          <h3>{`yelp ratings: ${result.rating}/5`}</h3>
-
-          <p className="RestaurantInfo__reviewCount">
-            {" "}
-            Based on {result.review_count} Reviews
-          </p>
-
-          <a href={result.url} className="RestaurantInfo__website">
-            More information on Yelp
-          </a>
-
-          <img
-            src={require("../../assets/Yelp.png")}
-            alt="yelp"
-            className="RestaurantInfo__yelp"
-          />
-        </div>
+          </div>
+        </CSSTransition>
       );
     });
 

@@ -15,7 +15,6 @@ export default class MainHeader extends Component {
       fontSize: "3rem",
       marginRight: "2rem",
       marginLeft: "2rem"
-      // pull: "left"
     };
     return (
       <div className="main-header">

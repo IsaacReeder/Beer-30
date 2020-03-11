@@ -15,6 +15,7 @@ import {
   faMapMarkerAlt,
   faPhone
 } from "@fortawesome/free-solid-svg-icons";
+import { CSSTransition } from "react-transition-group";
 
 import LandingPage from "./landing/LandingPage";
 import "../src/shared/components/BarList.scss";
@@ -45,7 +46,14 @@ class App extends Component {
               <LandingPage />
             </Route>
             <Route path="/WheresMyBrew" exact>
-              <MainPage />
+              <CSSTransition
+                in={true}
+                appear={true}
+                timeout={1000}
+                classNames="fade"
+              >
+                <MainPage />
+              </CSSTransition>
             </Route>
             <Redirect to="/" />
           </Switch>

@@ -5,6 +5,8 @@ import MainHeader from "./MainHeader";
 import SearchBar from "../../search/components/SearchBar";
 import BarList from "./BarList";
 import Footer from "./FooterMain";
+import { CSSTransition } from "react-transition-group";
+import "./MainPage.css";
 
 import axios from "axios";
 
@@ -50,8 +52,12 @@ class MainPage extends Component {
       <Fragment>
         <MainHeader title="Beer-30" />
         <SearchBar onFormSubmit={this.onFormSubmit} />
+
         <BarList searchLocationQuery={this.state.searchLocationQuery} />
-        <Footer />
+
+        <CSSTransition in={true} appear={true} timeout={1000} classNames="fade">
+          <Footer />
+        </CSSTransition>
       </Fragment>
     );
   }

@@ -49,7 +49,6 @@ export default class FooterMain extends Component {
           <FontAwesomeIcon
             icon={faSignOutAlt}
             size="3x"
-            // pull="right"
             to={"/"}
             onClick={this.handleClickLogout}
           />

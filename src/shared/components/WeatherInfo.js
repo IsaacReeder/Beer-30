@@ -62,9 +62,6 @@ class WeatherInfo extends Component {
             <p style={pStyle} className="weatherData__currentTemp">
               {Math.floor(this.state.results.main.temp)}&#8451;
             </p>
-            {/* <p style={pStyle} className="weatherData__description">
-              {this.state.results.weather[0].description}
-            </p> */}
             <br></br>
           </div>
         )}
