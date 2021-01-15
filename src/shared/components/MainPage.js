@@ -14,32 +14,32 @@ class MainPage extends Component {
   state = {
     employees: [],
     toDashboard: false,
-    isLoading: false
+    isLoading: false,
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      searchLocationQuery: null
+      searchLocationQuery: null,
     };
     this.url = "https://gowtham-rest-api-crud.herokuapp.com/employees";
     this.token = localStorage.getItem("token");
   }
 
-  onFormSubmit = searchLocationQuery => {
+  onFormSubmit = (searchLocationQuery) => {
     this.setState({
-      searchLocationQuery: searchLocationQuery
+      searchLocationQuery: searchLocationQuery,
     });
   };
 
   componentDidMount() {
     axios
       .get(this.url, { params: { token: this.token } })
-      .then(response => {
+      .then((response) => {
         const employees = response.data.data.employees;
         this.setState({ employees });
       })
-      .catch(error => {
+      .catch((error) => {
         this.setState({ toDashboard: true });
         console.log(error);
       });
@@ -50,7 +50,7 @@ class MainPage extends Component {
     }
     return (
       <Fragment>
-        <MainHeader title="Beer-30" />
+        <MainHeader title="Welp" />
         <SearchBar onFormSubmit={this.onFormSubmit} />
 
         <BarList searchLocationQuery={this.state.searchLocationQuery} />

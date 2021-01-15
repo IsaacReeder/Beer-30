@@ -17,10 +17,7 @@ const LandingPage = () => {
             classNames="fade"
           >
             <center>
-              <img
-                src={require("../assets/BeerGlasses.png")}
-                alt="BEER-30"
-              ></img>
+              <img src={require("../assets/BeerGlasses.png")} alt="Welp"></img>
               <Title />
               <LogIn />
               <Register header="Register" />
